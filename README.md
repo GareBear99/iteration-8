@@ -138,9 +138,39 @@ Example module blueprint
 }
 ```
 
+</details>
 
-# Iteration 9 'ThingsHappening' - Game Prototype
+# Engine Prototype
 
-![Demo](images/Image2.jpeg)
+<details>
+<summary>Click to view Synth Grid Engine prototype</summary>
+
+![Synth Grid Engine Prototype](images/Image2.jpeg)
+
+Example simulation of the Synth Grid Engine.
+
+The world runs on a **deterministic 2D simulation core** while projecting visually as a 3D sphere.
+
+Each tile represents simulation state generated from blueprint geometry.
+
+This prototype demonstrates:
+
+• blueprint shell generation  
+• cube-grid projection mapping  
+• deterministic seed worlds  
+• modular system attachment  
+• spatial execution visualization  
+
+The interface allows runtime loading of:
+
+- Shell Blueprints
+- Ship Modules
+- Scanner Modules
+- HUD Modules
+
+This prototype is also being used as a base for the **ThingsHappening game systems**.
+
+</details>
+
 
 
