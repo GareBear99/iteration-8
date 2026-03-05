@@ -1,122 +1,138 @@
-Synth Grid Engine
+# Synth Grid Engine
 
 A blueprint-driven simulation shell where geometry becomes computation.
 
-This project is an experimental system that treats space like a
-filesystem and entities like autonomous executors. The world itself
-becomes a programmable environment.
+This project is an experimental system that treats space like a filesystem and entities like autonomous executors. The world itself becomes a programmable environment.
 
-Inspired by: - TRON Grid Worlds - Geometry Wars style spatial
-computation - Modular OS-like simulation environments
+Inspired by:
+- TRON Grid Worlds
+- Geometry Wars style spatial computation
+- Modular OS-like simulation environments
 
-------------------------------------------------------------------------
+---
 
-Core Idea
+# Core Idea
 
-Instead of building a fixed application, the engine loads blueprints
-that define how the world behaves.
+Instead of building a fixed application, the engine loads **blueprints** that define how the world behaves.
 
 The system consists of three blueprint layers:
 
-1.  Shell Blueprint Defines the world geometry.
+1. **Shell Blueprint**
+   Defines the world geometry.
 
-2.  Module Blueprints Attach systems into the world.
+2. **Module Blueprints**
+   Attach systems into the world.
 
-3.  Execution Layer Runs the deterministic simulation loop.
+3. **Execution Layer**
+   Deterministic simulation loop.
 
-Core metaphor:
+Geometry = storage  
+Movement = computation  
+Entities = executors  
 
-Geometry = storage Movement = computation Entities = executors Paths =
-allocated space
+---
 
-------------------------------------------------------------------------
+# Architecture
 
-Math-First Simulation
+Engine Core
 
-The engine is math-first, not graphics-first.
 
-The simulation runs entirely in deterministic 2D vector space, while the
-rendering layer projects the world to appear visually 3D.
+---
 
-Advantages: - extremely low CPU usage - deterministic reproducible
-worlds - simple debugging and validation - portable execution on almost
-any hardware
+# Example World
 
-Even older machines (2010–2012 era laptops) can run the simulation
-smoothly.
+The included example blueprint: blueprint_octagon.json
 
-------------------------------------------------------------------------
+Builds an octagon shell structure where modules can attach.
 
-2D Core → Visually 3D
+---
 
-All world logic runs in 2D simulation space.
+# Controls
+```
+{
+| Key | Action |
+|----|----|
+| WASD | Move master control |
+| Mouse | Aim vector |
+| C | Toggle reticle |
+| ` | Toggle debug overlay |
+| R | Reset |
+}
+```
+---
 
-Rendering then projects that simulation into a visually 3D environment
-using techniques such as: - perspective scaling - layered sprites - cube
-grid projection - depth shading
+# Running the Engine
 
-This creates a 3D-like environment without the cost of a full 3D engine.
+1. Download the repository
+2. Open index.html
 
-------------------------------------------------------------------------
 
-Architecture
-
-Engine Core - deterministic simulation loop - fixed timestep updates -
-fail-closed execution model
-
-Blueprint System Blueprints describe how the world is built.
-
-Examples include: - Shell blueprints (world structure) - Ship modules -
-Scanner modules - HUD modules
-
-Example included blueprint: blueprint_octagon.json
-
-This builds an octagon shell structure where modules can attach.
-
-------------------------------------------------------------------------
-
-Controls
-
-WASD - Move master control Mouse - Aim vector C - Toggle reticle ` -
-Toggle debug overlay R - Reset
-
-------------------------------------------------------------------------
-
-Running the Engine
-
-1.  Download the repository
-2.  Open index.html in a browser
+in a browser.
 
 No server required.
 
-------------------------------------------------------------------------
+---
 
-Loading Blueprints
+# Loading Blueprints
 
 Upload blueprints into the runtime UI.
 
 Recommended order:
 
-1.  Shell blueprint
-2.  Ship module
-3.  Scanner module
-4.  HUD module (optional)
+1️⃣ Shell blueprint  
 
-------------------------------------------------------------------------
+2️⃣ Ship module  
 
-Blueprint Format
+3️⃣ Scanner module  
 
-Example module blueprint:
+4️⃣ HUD module (optional)  
 
-{ “moduleType”: “scanner”, “id”: “SCAN_01”, “style”: “default”,
-“config”: {}, “script”: “” }
+---
 
-------------------------------------------------------------------------
+# Blueprint Format
 
-What People Will Understand It As
+Example module blueprint
 
-A modular simulation engine where you build worlds by attaching
-blueprints instead of writing code.
+```json
+{
+  "moduleType": "scanner",
+  "id": "SCAN_01",
+  "style": "default",
+  "config": {},
+  "script": ""
+}
+```
 
-The system treats space itself as a programmable structure where modules
-define behavior and entities act as executors inside the environment.
+
+
+
+Math-First Simulation
+
+The engine is math-first, not graphics-first.
+
+The simulation runs entirely in deterministic 2D vector space, while the rendering layer projects the world to appear visually 3D.
+
+This approach provides several advantages:
+
+• extremely low CPU usage
+• deterministic reproducible worlds
+• simple debugging and validation
+• portable execution on almost any hardware
+
+Even older machines (2010–2012 era laptops) can run the simulation smoothly.
+
+2D Core → Visually 3D
+
+All world logic runs in 2D simulation space.
+
+Rendering then projects that simulation into a visually 3D environment using techniques such as:
+
+perspective scaling
+
+layered sprites
+
+cube grid projection
+
+depth shading
+
+This creates a 3D-like environment without the cost of a full 3D engine.
