@@ -139,7 +139,7 @@ Example module blueprint
 ```
 
 
-# Iteration 9 Prototype
+# Iteration 9 'ThingsHappening' - Game Prototype
 
 ![Demo](images/Image2.jpeg)
 
