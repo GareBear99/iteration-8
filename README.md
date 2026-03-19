@@ -140,7 +140,7 @@ Example module blueprint
 
 </details>
 
-# Engine Prototype
+# Game Engine Prototype
 
 <details>
 <summary>Click to view Synth Grid Engine prototype</summary>
