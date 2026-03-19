@@ -143,7 +143,7 @@ Example module blueprint
 # Game Engine Prototype
 
 <details>
-<summary>Click to view Synth Grid Engine prototype</summary>
+<summary>Click to view Synth Grid Game Engine prototype</summary>
 
 ![Synth Grid Engine Prototype](images/Image2.jpeg)
 
